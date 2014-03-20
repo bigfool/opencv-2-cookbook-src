@@ -1,4 +1,4 @@
-opencv-2-cookbook 中文版配套源代码
+opencv-2-cookbook 中文版配套源代码Qt版实现
 =====================
 
 [原书 OpenCV 2 Computer Vision Application Programming Cookbook](http://www.amazon.cn/OpenCV-2-Computer-Vision-Application-Programming-Cookbook-Laganiere-Robert/dp/1849513244/)<br>
@@ -7,11 +7,8 @@ opencv-2-cookbook 中文版配套源代码
 [京东购买链接](http://item.jd.com/11267855.html)<br>
 
 [第一版勘误整理](https://github.com/vinjn/opencv-2-cookbook-src/issues/62)
-<br>
-[#我想要OpenCV新书#活动说明（已结束）](https://github.com/vinjn/opencv-2-cookbook-src/issues/1) 及 [获奖者名单](https://github.com/vinjn/opencv-2-cookbook-src/issues?labels=%E8%8E%B7%E5%A5%96%E8%80%85&page=1&state=closed)
-
 ----
-
+[大憨改写了Qt版]我在Ubuntu下面用Qt重写了书上的代码，增加了封装，每个章节分为一个或者多个Qt工程。
 
 ![](https://raw.github.com/vinjn/vinjn.github.io/master/images/opecv-cookbook-face.jpg)
 
