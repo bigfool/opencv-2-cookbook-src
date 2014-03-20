@@ -13,9 +13,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    processstrategy.cpp \
+    strategycolordetector.cpp \
+    context.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    processstrategy.h \
+    strategycolordetector.h \
+    context.h
 
 FORMS    += mainwindow.ui
 
