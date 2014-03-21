@@ -28,16 +28,26 @@ void MainWindow::on_openButton_clicked()
         displayMat(m_colorDetectorCtl->getInputImage());
     }
 
-    cv::namedWindow("original");
-    cv::imshow("original", m_colorDetectorCtl->getInputImage());
+//    cv::namedWindow("original");
+//    cv::imshow("original", m_colorDetectorCtl->getInputImage());
 }
 
 void MainWindow::on_processButton_clicked()
 {
-    m_colorDetectorCtl->setTargetColor(130, 190, 200);
+//    m_colorDetectorCtl->setTargetColor(130, 190, 200);
+//    m_colorDetectorCtl->doProcess();
+//    cv::namedWindow("result");
+//    cv::imshow("result", m_colorDetectorCtl->getLastResult());
+    m_colorDetectorCtl->setColorDistanceThreshold(ui->distanceThresholdSlider->value());
     m_colorDetectorCtl->doProcess();
-    cv::namedWindow("result");
-    cv::imshow("result", m_colorDetectorCtl->getLastResult());
+
+    cv::Mat result = m_colorDetectorCtl->getLastResult();
+    if (!result.empty())
+    {
+        displayMat(result);
+//        cv::namedWindow("result");
+//        cv::imshow("result", m_colorDetectorCtl->getLastResult());
+    }
 }
 
 void MainWindow::displayMat(const cv::Mat &img)
@@ -75,4 +85,11 @@ void MainWindow::setColor()
 void MainWindow::on_selectColorButton_clicked()
 {
     setColor();
+}
+
+void MainWindow::on_distanceThresholdSlider_valueChanged(int value)
+{
+    QString cdt("Color Distance Threshold: ");
+    cdt.append(QString::number(value));
+    this->ui->inputInfoLabel->setText(cdt);
 }

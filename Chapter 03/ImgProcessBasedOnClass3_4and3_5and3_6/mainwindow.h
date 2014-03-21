@@ -32,6 +32,8 @@ private slots:
 
     void on_selectColorButton_clicked();
 
+    void on_distanceThresholdSlider_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     ColorDetectController *m_colorDetectorCtl;
