@@ -19,6 +19,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    //display the image in the Label
+    void displayMat(const cv::Mat &img);
+
 private slots:
     void on_openButton_clicked();
 

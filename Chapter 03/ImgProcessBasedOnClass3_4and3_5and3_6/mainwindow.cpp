@@ -25,6 +25,7 @@ void MainWindow::on_openButton_clicked()
     if (m_colorDetectorCtl->setInputImage(fileName.toUtf8().data()))
     {
         ui->processButton->setEnabled(true);
+        displayMat(m_colorDetectorCtl->getInputImage());
     }
 
     cv::namedWindow("original");
@@ -37,4 +38,27 @@ void MainWindow::on_processButton_clicked()
     m_colorDetectorCtl->doProcess();
     cv::namedWindow("result");
     cv::imshow("result", m_colorDetectorCtl->getLastResult());
+}
+
+void MainWindow::displayMat(const cv::Mat &img)
+{
+    QImage qtImg = QImage((const unsigned char *)img.data, img.cols, img.rows,
+                          img.step, QImage::Format_RGB888);
+
+    if (qtImg.isNull())
+    {
+        QVector<QRgb> colorTable;
+        for (int i = 0; i < 256; i++)
+        {
+            colorTable.push_back(qRgb(i, i, i));
+        }
+
+        qtImg = QImage((const unsigned char *)img.data, img.cols, img.rows,
+                       QImage::Format_Indexed8);
+        qtImg.setColorTable(colorTable);
+    }
+
+    QPixmap pixImg = QPixmap::fromImage(qtImg.rgbSwapped());
+    this->ui->imageLabel->setPixmap(pixImg.scaled(ui->imageLabel->size(),
+                                                  Qt::KeepAspectRatio));
 }
