@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QColorDialog>
 #include "colordetectcontroller.h"
 #include "processstrategy.h"
 #include "strategycolordetector.h"
@@ -22,11 +23,14 @@ public:
 protected:
     //display the image in the Label
     void displayMat(const cv::Mat &img);
+    void setColor();
 
 private slots:
     void on_openButton_clicked();
 
     void on_processButton_clicked();
+
+    void on_selectColorButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -62,3 +62,17 @@ void MainWindow::displayMat(const cv::Mat &img)
     this->ui->imageLabel->setPixmap(pixImg.scaled(ui->imageLabel->size(),
                                                   Qt::KeepAspectRatio));
 }
+
+void MainWindow::setColor()
+{
+    QColor color = QColorDialog::getColor(Qt::green, this);
+    if (color.isValid())
+    {
+        m_colorDetectorCtl->setTargetColor(color.red(), color.green(), color.blue());
+    }
+}
+
+void MainWindow::on_selectColorButton_clicked()
+{
+    setColor();
+}
