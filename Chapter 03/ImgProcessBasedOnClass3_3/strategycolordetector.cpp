@@ -75,3 +75,17 @@ cv::Mat StrategyColorDetector::ProcessAlgrithmIf(const cv::Mat &image)
 
     return m_result;
 }
+
+void StrategyColorDetector::setTargetColorIf(unsigned char red, unsigned char green, unsigned char blue)
+{
+     qDebug() << QString("[ProcessStrategy::setTargetColorIf]red = %1 green = %2 blue = %3").arg(red).arg(green).arg(blue);
+    setTargetColor(red, green, blue);
+}
+
+void StrategyColorDetector::getTargetColorIf(unsigned char &red, unsigned char &green, unsigned char &blue)
+{
+    cv::Vec3b color = getTargetColor();
+    red = color[2];
+    green = color[1];
+    blue = color[0];
+}

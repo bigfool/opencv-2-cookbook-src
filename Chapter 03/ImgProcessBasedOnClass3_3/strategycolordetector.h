@@ -8,6 +8,14 @@ class StrategyColorDetector : public ProcessStrategy
 public:
     StrategyColorDetector();
     virtual ~StrategyColorDetector();
+
+    void setColorDistanceThresholdIf(int distance) { setColorDistanceThreshold(distance);}
+    int getColorDistanceThresholdIf() { return getColorDistanceThreshold(); }
+
+    void setTargetColorIf(unsigned char red, unsigned char green, unsigned char blue);
+    void getTargetColorIf(unsigned char &red, unsigned char &green, unsigned char &blue);
+
+private:
     void setColorDistanceThreshold(int distance);
     int getColorDistanceThreshold() const;
 
@@ -18,7 +26,6 @@ public:
 
     cv::Mat ProcessAlgrithmIf(const cv::Mat &image);
 
-private:
     int getDistance(const cv::Vec3b &color) const;
 
 private:
