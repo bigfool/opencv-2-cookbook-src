@@ -7,8 +7,11 @@ ColorDetectController::ColorDetectController(ProcessStrategy *stg)
 
 ColorDetectController::~ColorDetectController()
 {
-    if (m_stg == NULL)
+    if (m_stg != NULL)
+    {
         delete m_stg;
+        m_stg = NULL;
+    }
 }
 
 void ColorDetectController::setColorDistanceThreshold(int distance)
