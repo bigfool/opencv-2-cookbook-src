@@ -20,10 +20,15 @@ public:
     void doProcess();
     const cv::Mat getLastResult() const;
 
+    static ColorDetectController * getInstance(ProcessStrategy *stg);
+
 private:
     ProcessStrategy *m_stg;
     cv::Mat m_image;
     cv::Mat m_result;
+
+    //singleton
+    static ColorDetectController * m_instance;
 };
 
 #endif // COLORDETECTCONTROLLER_H

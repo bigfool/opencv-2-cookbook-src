@@ -1,5 +1,7 @@
 #include "colordetectcontroller.h"
 
+ColorDetectController * ColorDetectController::m_instance = NULL;
+
 ColorDetectController::ColorDetectController(ProcessStrategy *stg)
 {
     m_stg = stg;
@@ -7,8 +9,17 @@ ColorDetectController::ColorDetectController(ProcessStrategy *stg)
 
 ColorDetectController::~ColorDetectController()
 {
-    if (m_stg == NULL)
+    if (m_stg != NULL)
+    {
         delete m_stg;
+        m_stg = NULL;
+    }
+
+    if (m_instance != NULL)
+    {
+        delete m_instance;
+        m_instance = NULL;
+    }
 }
 
 void ColorDetectController::setColorDistanceThreshold(int distance)
@@ -58,4 +69,14 @@ void ColorDetectController::doProcess()
 const cv::Mat ColorDetectController::getLastResult() const
 {
     return m_result;
+}
+
+ColorDetectController * ColorDetectController::getInstance(ProcessStrategy *stg)
+{
+    if (NULL == m_instance)
+    {
+        m_instance = new ColorDetectController(stg);
+    }
+
+    return m_instance;
 }

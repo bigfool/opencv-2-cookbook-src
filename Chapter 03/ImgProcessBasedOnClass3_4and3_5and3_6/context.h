@@ -8,6 +8,7 @@ class Context
 public:
     Context(ProcessStrategy *stg);
     ~Context();
+
     cv::Mat doProcess(const cv::Mat &image);
 private:
     ProcessStrategy *m_stg;
