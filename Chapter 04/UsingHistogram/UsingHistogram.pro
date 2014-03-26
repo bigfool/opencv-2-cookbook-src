@@ -13,8 +13,22 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    processstrategy.cpp \
+    strategyhistogram1d.cpp \
+    controller.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    processstrategy.h \
+    strategyhistogram1d.h \
+    controller.h
 
 FORMS    += mainwindow.ui
+
+unix {
+    CONFIG += link_pkgconfig
+    PKGCONFIG += opencv
+}
+win32 {
+
+}
