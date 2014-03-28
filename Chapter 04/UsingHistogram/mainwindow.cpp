@@ -62,3 +62,18 @@ void MainWindow::on_histogramButton_clicked()
     cv::namedWindow("original");
     cv::imshow("original", m_controller->getInputImage());
 }
+
+void MainWindow::on_colorHistButton_clicked()
+{
+    StrategyColorHistogram *stg = new StrategyColorHistogram();
+    m_controller = Controller::getInstance((ProcessStrategy *)stg);
+    if (m_controller->setInputImage(m_fileName.toUtf8().data()))
+    {
+        //ui->processButton->setEnabled(true);
+        displayMat(m_controller->getInputImage());
+        m_controller->doProcess();
+    }
+
+    cv::namedWindow("original");
+    cv::imshow("original", m_controller->getInputImage());
+}

@@ -6,6 +6,7 @@
 #include "controller.h"
 #include "processstrategy.h"
 #include "strategyhistogram1d.h"
+#include "strategycolorhistogram.h"
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +28,8 @@ private slots:
     void on_openButton_clicked();
 
     void on_histogramButton_clicked();
+
+    void on_colorHistButton_clicked();
 
 private:
     Ui::MainWindow *ui;
