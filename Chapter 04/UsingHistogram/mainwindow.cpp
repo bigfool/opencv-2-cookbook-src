@@ -56,6 +56,7 @@ void MainWindow::on_histogramButton_clicked()
     {
         //ui->processButton->setEnabled(true);
         displayMat(m_controller->getInputImage());
+        m_controller->doProcess();
     }
 
     cv::namedWindow("original");
