@@ -13,7 +13,7 @@ private:
     cv::Mat ProcessAlgrithmIf(const cv::Mat &image);
     cv::SparseMat getSparseHistogram(const cv::Mat &image);
     cv::Mat getHistogram(const cv::Mat &image);
-    cv::Mat getHistogramImage(const cv::Mat &image);
+    cv::Mat getHistogramImage(const cv::Mat &image, cv::Scalar color);
 
 private:
     int m_histSize[3];
