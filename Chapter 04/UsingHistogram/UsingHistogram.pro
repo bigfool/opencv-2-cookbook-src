@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     controller.cpp \
     strategycolorhistogram.cpp \
     strategylut.cpp \
-    strategystretch.cpp
+    strategystretch.cpp \
+    strategyequalize.cpp
 
 HEADERS  += mainwindow.h \
     processstrategy.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     controller.h \
     strategycolorhistogram.h \
     strategylut.h \
-    strategystretch.h
+    strategystretch.h \
+    strategyequalize.h
 
 FORMS    += mainwindow.ui
 

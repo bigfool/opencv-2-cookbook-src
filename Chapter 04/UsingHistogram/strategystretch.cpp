@@ -1,4 +1,5 @@
 #include "strategystretch.h"
+#include <opencv2/imgproc/imgproc.hpp>
 
 StrategyStretch::StrategyStretch()
 {
