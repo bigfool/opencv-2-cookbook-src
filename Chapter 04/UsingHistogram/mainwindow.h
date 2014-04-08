@@ -8,6 +8,7 @@
 #include "strategyhistogram1d.h"
 #include "strategycolorhistogram.h"
 #include "strategylut.h"
+#include "strategystretch.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,6 +34,8 @@ private slots:
     void on_colorHistButton_clicked();
 
     void on_lutButton_clicked();
+
+    void on_stretchButton_clicked();
 
 private:
     Ui::MainWindow *ui;

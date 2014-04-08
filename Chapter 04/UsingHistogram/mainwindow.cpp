@@ -92,3 +92,18 @@ void MainWindow::on_lutButton_clicked()
     cv::namedWindow("result");
     cv::imshow("result", m_controller->getLastResult());
 }
+
+void MainWindow::on_stretchButton_clicked()
+{
+    StrategyStretch *stg = new StrategyStretch();
+    m_controller = Controller::getInstance((ProcessStrategy *)stg);
+    if (m_controller->setInputImage(m_fileName.toUtf8().data()))
+    {
+        //ui->processButton->setEnabled(true);
+        displayMat(m_controller->getInputImage());
+        m_controller->doProcess();
+    }
+
+    cv::namedWindow("stretch");
+    cv::imshow("stretch", m_controller->getLastResult());
+}

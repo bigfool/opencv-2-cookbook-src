@@ -8,12 +8,13 @@ class StrategyHistogram1D : public ProcessStrategy
 public:
     StrategyHistogram1D();
     virtual ~StrategyHistogram1D();
-
+    cv::MatND getHistogram(const cv::Mat &image);
+    int getHistSize() { return m_histSize[0]; }
+    cv::Mat getHistogramImage(const cv::Mat &image);
 
 private:
     cv::Mat ProcessAlgrithmIf(const cv::Mat &image);
-    cv::MatND getHistogram(const cv::Mat &image);
-    cv::Mat getHistogramImage(const cv::Mat &image);
+
 
 private:
     int m_histSize[1];

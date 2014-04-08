@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     strategyhistogram1d.cpp \
     controller.cpp \
     strategycolorhistogram.cpp \
-    strategylut.cpp
+    strategylut.cpp \
+    strategystretch.cpp
 
 HEADERS  += mainwindow.h \
     processstrategy.h \
     strategyhistogram1d.h \
     controller.h \
     strategycolorhistogram.h \
-    strategylut.h
+    strategylut.h \
+    strategystretch.h
 
 FORMS    += mainwindow.ui
 
