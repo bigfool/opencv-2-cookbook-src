@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     processstrategy.cpp \
     strategyhistogram1d.cpp \
     controller.cpp \
-    strategycolorhistogram.cpp
+    strategycolorhistogram.cpp \
+    strategylut.cpp
 
 HEADERS  += mainwindow.h \
     processstrategy.h \
     strategyhistogram1d.h \
     controller.h \
-    strategycolorhistogram.h
+    strategycolorhistogram.h \
+    strategylut.h
 
 FORMS    += mainwindow.ui
 
