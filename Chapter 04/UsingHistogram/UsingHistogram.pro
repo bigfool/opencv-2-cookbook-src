@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     strategycolorhistogram.cpp \
     strategylut.cpp \
     strategystretch.cpp \
-    strategyequalize.cpp
+    strategyequalize.cpp \
+    strategycontentfinder.cpp
 
 HEADERS  += mainwindow.h \
     processstrategy.h \
@@ -29,7 +30,8 @@ HEADERS  += mainwindow.h \
     strategycolorhistogram.h \
     strategylut.h \
     strategystretch.h \
-    strategyequalize.h
+    strategyequalize.h \
+    strategycontentfinder.h
 
 FORMS    += mainwindow.ui
 

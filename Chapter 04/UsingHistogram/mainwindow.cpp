@@ -122,3 +122,18 @@ void MainWindow::on_equalizeButton_clicked()
     cv::namedWindow("equalize");
     cv::imshow("equalize", m_controller->getLastResult());
 }
+
+void MainWindow::on_calcBlackButton_clicked()
+{
+    StrategyContentFinder *stg = new StrategyContentFinder();
+    m_controller = Controller::getInstance((ProcessStrategy *)stg);
+    if (m_controller->setInputImage(m_fileName.toUtf8().data()))
+    {
+        //ui->processButton->setEnabled(true);
+        displayMat(m_controller->getInputImage());
+        m_controller->doProcess();
+    }
+
+    cv::namedWindow("content finder");
+    cv::imshow("content finder", m_controller->getLastResult());
+}

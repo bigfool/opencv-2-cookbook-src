@@ -19,6 +19,7 @@ cv::Mat StrategyEqualize::equalize(const cv::Mat &image)
 {
     cv::Mat result;
     result.create(image.rows, image.cols, image.type());
+
     try
     {
          cv::equalizeHist(image, result);

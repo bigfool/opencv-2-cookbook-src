@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>80</y>
+      <y>60</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -57,9 +57,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>120</y>
+      <y>100</y>
       <width>131</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -70,9 +70,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>180</y>
+      <y>140</y>
       <width>131</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -83,9 +83,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>230</y>
+      <y>180</y>
       <width>131</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -96,13 +96,26 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>290</y>
+      <y>220</y>
       <width>131</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>直方图均衡化</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="calcBlackButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>反投影检测内容</string>
     </property>
    </widget>
   </widget>

@@ -10,6 +10,7 @@
 #include "strategylut.h"
 #include "strategystretch.h"
 #include "strategyequalize.h"
+#include "strategycontentfinder.h"
 
 namespace Ui {
 class MainWindow;
@@ -39,6 +40,8 @@ private slots:
     void on_stretchButton_clicked();
 
     void on_equalizeButton_clicked();
+
+    void on_calcBlackButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -9,10 +9,12 @@ public:
     StrategyColorHistogram();
     virtual ~StrategyColorHistogram();
 
+    cv::Mat getHistogram(const cv::Mat &image);
+
 private:
     cv::Mat ProcessAlgrithmIf(const cv::Mat &image);
     cv::SparseMat getSparseHistogram(const cv::Mat &image);
-    cv::Mat getHistogram(const cv::Mat &image);
+
     cv::Mat getHistogramImage(const cv::Mat &image, cv::Scalar color);
 
 private:
