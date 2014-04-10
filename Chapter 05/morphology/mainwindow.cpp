@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->edgeButton->setEnabled(false);
+    ui->cornerButton->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -49,6 +50,7 @@ void MainWindow::on_openButton_clicked()
     this->ui->imageLabel->setPixmap(pixImg.scaled(ui->imageLabel->size(),
                                                   Qt::KeepAspectRatio));
     ui->edgeButton->setEnabled(true);
+    ui->cornerButton->setEnabled(true);
 }
 
 void MainWindow::on_edgeButton_clicked()
@@ -64,4 +66,19 @@ void MainWindow::on_edgeButton_clicked()
 
     cv::namedWindow("result");
     cv::imshow("result", m_controller->getLastResult());
+}
+
+void MainWindow::on_cornerButton_clicked()
+{
+    StrategyMorphCorner *stg = new StrategyMorphCorner();
+    stg->setThreshold(40);
+    m_controller = Controller::getInstance((ProcessStrategy *)stg);
+    if (m_controller->setInputImage(m_fileName.toUtf8().data()))
+    {
+        displayMat(m_controller->getInputImage());
+        m_controller->doProcess();
+    }
+
+    cv::namedWindow("corner result");
+    cv::imshow("corner result", m_controller->getLastResult());
 }

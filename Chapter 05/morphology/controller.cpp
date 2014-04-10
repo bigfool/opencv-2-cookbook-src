@@ -35,7 +35,7 @@ Controller * Controller::getInstance(ProcessStrategy *stg)
 
 bool Controller::setInputImage(std::string fileName)
 {
-    m_image = cv::imread(fileName);
+    m_image = cv::imread(fileName, 0);
     if (!m_image.data)
     {
         qDebug() << "[ColorDetectController::setInputImage] can't open image";

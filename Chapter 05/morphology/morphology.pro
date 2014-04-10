@@ -16,12 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     processstrategy.cpp \
     controller.cpp \
-    strategymorpholine.cpp
+    strategymorpholine.cpp \
+    strategymorphcorner.cpp
 
 HEADERS  += mainwindow.h \
     processstrategy.h \
     controller.h \
-    strategymorpholine.h
+    strategymorpholine.h \
+    strategymorphcorner.h
 
 FORMS    += mainwindow.ui
 

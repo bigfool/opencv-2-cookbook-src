@@ -7,6 +7,7 @@
 #include "controller.h"
 #include "processstrategy.h"
 #include "strategymorpholine.h"
+#include "strategymorphcorner.h"
 
 namespace Ui {
 class MainWindow;
@@ -28,6 +29,8 @@ private slots:
     void on_openButton_clicked();
 
     void on_edgeButton_clicked();
+
+    void on_cornerButton_clicked();
 
 private:
     Ui::MainWindow *ui;
