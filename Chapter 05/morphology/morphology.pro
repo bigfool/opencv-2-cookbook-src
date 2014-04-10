@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     processstrategy.cpp \
-    controller.cpp
+    controller.cpp \
+    strategymorpholine.cpp
 
 HEADERS  += mainwindow.h \
     processstrategy.h \
-    controller.h
+    controller.h \
+    strategymorpholine.h
 
 FORMS    += mainwindow.ui
 

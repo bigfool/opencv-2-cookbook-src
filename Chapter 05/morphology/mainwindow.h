@@ -6,6 +6,7 @@
 #include <QFileDialog>
 #include "controller.h"
 #include "processstrategy.h"
+#include "strategymorpholine.h"
 
 namespace Ui {
 class MainWindow;
@@ -25,6 +26,8 @@ protected:
 
 private slots:
     void on_openButton_clicked();
+
+    void on_edgeButton_clicked();
 
 private:
     Ui::MainWindow *ui;

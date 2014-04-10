@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->edgeButton->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -47,4 +48,20 @@ void MainWindow::on_openButton_clicked()
     QPixmap pixImg(m_fileName);
     this->ui->imageLabel->setPixmap(pixImg.scaled(ui->imageLabel->size(),
                                                   Qt::KeepAspectRatio));
+    ui->edgeButton->setEnabled(true);
+}
+
+void MainWindow::on_edgeButton_clicked()
+{
+    StrategyMorphoLine *stg = new StrategyMorphoLine();
+    stg->setThreshold(40);
+    m_controller = Controller::getInstance((ProcessStrategy *)stg);
+    if (m_controller->setInputImage(m_fileName.toUtf8().data()))
+    {
+        displayMat(m_controller->getInputImage());
+        m_controller->doProcess();
+    }
+
+    cv::namedWindow("result");
+    cv::imshow("result", m_controller->getLastResult());
 }

@@ -12,4 +12,5 @@ ProcessStrategy::~ProcessStrategy()
 cv::Mat ProcessStrategy::ProcessAlgrithmIf(const cv::Mat &image)
 {
     qDebug() << "[ProcessStrategy::ProcessAlgrithmIf] ProcessAlgrithmIf ";
+    return cv::Mat();
 }
