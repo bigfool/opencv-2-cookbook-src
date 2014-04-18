@@ -8,6 +8,7 @@
 #include "processstrategy.h"
 #include "strategymorpholine.h"
 #include "strategymorphcorner.h"
+#include "strategywatershed.h"
 
 namespace Ui {
 class MainWindow;
@@ -31,6 +32,8 @@ private slots:
     void on_edgeButton_clicked();
 
     void on_cornerButton_clicked();
+
+    void on_watershedButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -66,6 +66,19 @@
      <string>角点检测</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="watershedButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图像分割</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->edgeButton->setEnabled(false);
     ui->cornerButton->setEnabled(false);
+    ui->watershedButton->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -51,6 +52,7 @@ void MainWindow::on_openButton_clicked()
                                                   Qt::KeepAspectRatio));
     ui->edgeButton->setEnabled(true);
     ui->cornerButton->setEnabled(true);
+    ui->watershedButton->setEnabled(true);
 }
 
 void MainWindow::on_edgeButton_clicked()
@@ -81,4 +83,18 @@ void MainWindow::on_cornerButton_clicked()
 
     cv::namedWindow("corner result");
     cv::imshow("corner result", m_controller->getLastResult());
+}
+
+void MainWindow::on_watershedButton_clicked()
+{
+    StrategyWatershed *stg = new StrategyWatershed();
+    m_controller = Controller::getInstance((ProcessStrategy *)stg);
+    if (m_controller->setInputImage(m_fileName.toUtf8().data()))
+    {
+        displayMat(m_controller->getInputImage());
+        m_controller->doProcess();
+    }
+
+    cv::namedWindow("watershed result");
+    cv::imshow("watershed result", m_controller->getLastResult());
 }

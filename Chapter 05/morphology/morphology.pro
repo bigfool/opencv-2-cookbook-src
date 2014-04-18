@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     processstrategy.cpp \
     controller.cpp \
     strategymorpholine.cpp \
-    strategymorphcorner.cpp
+    strategymorphcorner.cpp \
+    strategywatershed.cpp
 
 HEADERS  += mainwindow.h \
     processstrategy.h \
     controller.h \
     strategymorpholine.h \
-    strategymorphcorner.h
+    strategymorphcorner.h \
+    strategywatershed.h
 
 FORMS    += mainwindow.ui
 
